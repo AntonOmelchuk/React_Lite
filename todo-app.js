@@ -1,13 +1,6 @@
 /** @jsx React.createElement */
 
 const root = document.getElementById('root')
-const App = React.createElement(
-  'h1',
-  {
-    className: 'header'
-  },
-  'React Lite Library'
-)
 
 var Step1 = (
   <div>
@@ -38,5 +31,22 @@ var Step2 = (
   </div>
 );
 
-const Heart = (props) => <span style={props.style}>&hearts;</span>
-React.render(<Heart style="color:red" />, root)
+// Testing functional components, props, nested components
+
+const Heart = props => <span style={props.style}>&hearts;</span>
+
+const Button = props => <button onClick={props.onClick}>{props.children}</button>
+
+const App = props => (
+  <div className="container">
+    <h2>Lite React App</h2>
+    <h6>{props.message}</h6>
+
+    <Button onClick={() => alert('This is Lite React')}>
+      I <Heart style="color:red" /> React
+    </Button>
+  </div>
+)
+
+React.render(<App message="create own React" />, root)
+
