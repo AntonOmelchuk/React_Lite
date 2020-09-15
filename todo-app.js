@@ -1,7 +1,6 @@
 /** @jsx React.createElement */
 
 const root = document.getElementById('root')
-console.log('react: ', React)
 const App = React.createElement(
   'h1',
   {
@@ -39,5 +38,5 @@ var Step2 = (
   </div>
 );
 
-const Heart = () => <span>&hearts;</span>
-React.render(<Heart />, root)
+const Heart = (props) => <span style={props.style}>&hearts;</span>
+React.render(<Heart style="color:red" />, root)
