@@ -32,8 +32,8 @@ var Step2 = (
 );
 
 class Alert extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
   }
 
@@ -41,10 +41,13 @@ class Alert extends React.Component {
     return (
       <div className="container">
         <h2>Lite React Class</h2>
+        <div>
+          <h4>{this.props.title}</h4>
+        </div>
       </div>
     )
   }
 }
 
-React.render(<Alert />, root)
+React.render(<Alert title="Test Class Component props" />, root)
 
