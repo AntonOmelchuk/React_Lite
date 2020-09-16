@@ -31,22 +31,20 @@ var Step2 = (
   </div>
 );
 
-// Testing functional components, props, nested components
+class Alert extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
 
-const Heart = props => <span style={props.style}>&hearts;</span>
+  render() {
+    return (
+      <div className="container">
+        <h2>Lite React Class</h2>
+      </div>
+    )
+  }
+}
 
-const Button = props => <button onClick={props.onClick}>{props.children}</button>
-
-const App = props => (
-  <div className="container">
-    <h2>Lite React App</h2>
-    <h6>{props.message}</h6>
-
-    <Button onClick={() => alert('This is Lite React')}>
-      I <Heart style="color:red" /> React
-    </Button>
-  </div>
-)
-
-React.render(<App message="create own React" />, root)
+React.render(<Alert />, root)
 
